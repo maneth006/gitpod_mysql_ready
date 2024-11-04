@@ -8,8 +8,9 @@ mydb = mysql.connector.connect(
 )
 mycursor = mydb.cursor()
 risp = "",
-rispOpz = int(input("1) Aggiungi un nuovo mammifero per 5 volte - 2) Visualizza la tabella")) 
-for _ in range(5):
+rispOpz = int(input("1) Aggiungi un nuovo mammifero - 2) Visualizza la tabella  ")) 
+quantMammiferi = int(input("Quanti mammiferi vuoi aggiungere alla tabella? ")) 
+for _ in range(quantMammiferi):
   if(rispOpz == 1):
     mycursor.execute("USE Animali")
     Nome = input("Inserisci il nome: ")
@@ -38,6 +39,3 @@ for _ in range(5):
 
     for x in myresult:
       print(x)
-
-
-
